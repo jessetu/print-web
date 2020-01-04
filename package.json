@@ -1,0 +1,35 @@
+{
+  "name": "tprint",
+  "version": "1.0.0",
+  "private": false,
+  "main": "./dist/tprint.min.js",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:evantu/tprint.git"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.0",
+    "@rollup/plugin-json": "^4.0.1",
+    "@rollup/plugin-node-resolve": "^6.0.0",
+    "@rollup/plugin-typescript": "^2.0.1",
+    "rollup": "^1.20.0",
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "svelte": "^3.0.0",
+    "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "sirv-cli": "^0.4.4",
+    "tslib": "^1.10.0"
+  },
+  "author": "tu",
+  "license": "MIT"
+}

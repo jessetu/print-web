@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+
+	<title>tprint</title>
+
+	<link rel='icon' type='image/png' href='/favicon.png'>
+	<!-- <link rel='stylesheet' href='/global.css'>
+	<link rel='stylesheet' href='/build/bundle.css'> -->
+	<style>
+		body {
+			padding: 100px;
+			background-color: burlywood;
+		}
+
+		button {
+			margin-top: 30px;
+		}
+
+		table {
+			font-size: 15px;
+			background-color: #fff;
+		}
+
+		tr {
+			height: 50px;
+		}
+
+		th,
+		td {
+			width: 200px;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<div style="display: none;">
+		<table border id="t-print-e">
+			<tbody>
+				<tr>
+					<th colspan="2">tprint 打印组件</th>
+				</tr>
+				<tr>
+					<td>abc</td>
+					<td>abc</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+
+	<button onclick="startPrint()">开始打印</button>
+	<script type="module">
+		import p from "./tprint.js"
+
+		export { p }
+
+	</script>
+
+	<script>
+		function startPrint() {
+			p()
+		}
+	</script>
+</body>
+
+</html>

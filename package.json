@@ -1,10 +1,10 @@
 {
-  "name": "tprint",
+  "name": "print-web",
   "version": "1.0.0",
   "private": false,
   "main": "./dist/tprint.min.js",
   "files": [
-    "dist"
+    "dist"  
   ],
   "repository": {
     "type": "git",

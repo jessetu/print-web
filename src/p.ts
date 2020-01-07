@@ -2,7 +2,7 @@ import { Iframe } from "./iframe";
 
 export interface Params {
   id: string;
-  frameId: string;
+  iframeId: string;
   title?: string;
 }
 export default class P {

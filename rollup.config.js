@@ -13,7 +13,7 @@ export default {
 		sourcemap: true,
 		format: 'esm',
 		name: 'app',
-		file: production ?'./dist/tprint.min.js': './public/tprint.js'
+		file: production ?'./dist/print-web.min.js': './public/js/print-web.js'
 	},
 	plugins: [
 		ts(),

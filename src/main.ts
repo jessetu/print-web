@@ -1,8 +1,8 @@
 import P, { Params } from "./p";
 import { Iframe } from './iframe';
 const initConfig: Params = {
-	id: "t-print-e",
-	frameId: "t-print",
+	id: "print-web",
+	iframeId: "print-web-iframe",
 	title: "print page"
 };
 

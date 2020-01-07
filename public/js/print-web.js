@@ -23,15 +23,15 @@ class Iframe {
         this.printPage = document.getElementById(this.config.id);
     }
     createIframe() {
-        const checkIframe = document.getElementById(this.config.frameId);
+        const checkIframe = document.getElementById(this.config.iframeId);
         if (!checkIframe) {
             let printFrame = document.createElement("iframe");
             printFrame.setAttribute("style", "visibility: hidden; height: 0; width: 0; position: absolute;");
-            printFrame.setAttribute("id", this.config.frameId);
-            printFrame.setAttribute("name", this.config.frameId);
+            printFrame.setAttribute("id", this.config.iframeId);
+            printFrame.setAttribute("name", this.config.iframeId);
             // printFrame.srcdoc = `<html><head><title>${this.config.title}</title></head><body></body></html>`;
             document.getElementsByTagName("body")[0].appendChild(printFrame);
-            return document.getElementById(this.config.frameId);
+            return document.getElementById(this.config.iframeId);
         }
         return checkIframe;
     }
@@ -41,8 +41,8 @@ class Iframe {
             this.traverseNode(this.printPage, (ele) => {
                 ele.setAttribute("p-style", window.getComputedStyle(ele, null).cssText);
             });
-        if (this.config.frameId) {
-            // let printFrameObj= document.getElementById(this.config.frameId).contentWindow;
+        if (this.config.iframeId) {
+            // let printFrameObj= document.getElementById(this.config.iframeId).contentWindow;
             const printFrameObj = this.iframe.contentWindow;
             if (printFrameObj) {
                 const iframeBody = printFrameObj.document.getElementsByTagName("body")[0];
@@ -89,8 +89,8 @@ class Iframe {
 }
 
 const initConfig = {
-    id: "t-print-e",
-    frameId: "t-print",
+    id: "print-web",
+    iframeId: "print-web-iframe",
     title: "print page"
 };
 function init(params) {
@@ -102,4 +102,4 @@ if (typeof window !== "undefined") {
 }
 
 export default init;
-//# sourceMappingURL=tprint.js.map
+//# sourceMappingURL=print-web.js.map

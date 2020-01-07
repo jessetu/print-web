@@ -8,8 +8,7 @@
 	<title>tprint</title>
 
 	<link rel='icon' type='image/png' href='/favicon.png'>
-	<!-- <link rel='stylesheet' href='/global.css'>
-	<link rel='stylesheet' href='/build/bundle.css'> -->
+	<link rel='stylesheet' href='/global.css'>
 	<style>
 		body {
 			padding: 100px;
@@ -39,10 +38,10 @@
 
 <body>
 	<div style="display: none;">
-		<table border id="t-print-e">
+		<table border id="print-web">
 			<tbody>
 				<tr>
-					<th colspan="2">tprint 打印组件</th>
+					<th colspan="2">print-web 打印</th>
 				</tr>
 				<tr>
 					<td>abc</td>
@@ -56,7 +55,7 @@
 
 	<button onclick="startPrint()">开始打印</button>
 	<script type="module">
-		import p from "./tprint.js"
+		import p from "./js/print-web.js"
 
 		export { p }
 

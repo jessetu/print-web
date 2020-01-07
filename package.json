@@ -2,13 +2,13 @@
   "name": "print-web",
   "version": "1.0.0",
   "private": false,
-  "main": "./dist/tprint.min.js",
+  "main": "./dist/print-web.min.js",
   "files": [
-    "dist"  
+    "dist"
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:evantu/tprint.git"
+    "url": "git@github.com:evantu/print-web.git"
   },
   "scripts": {
     "build": "rollup -c",

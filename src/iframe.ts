@@ -11,7 +11,7 @@ export class Iframe {
 
   createIframe(): HTMLFrameElement {
     const checkIframe = document.getElementById(
-      this.config.frameId
+      this.config.iframeId
     ) as HTMLFrameElement;
     if (!checkIframe) {
       let printFrame = document.createElement("iframe");
@@ -19,13 +19,13 @@ export class Iframe {
         "style",
         "visibility: hidden; height: 0; width: 0; position: absolute;"
       );
-      printFrame.setAttribute("id", this.config.frameId);
-      printFrame.setAttribute("name", this.config.frameId);
+      printFrame.setAttribute("id", this.config.iframeId);
+      printFrame.setAttribute("name", this.config.iframeId);
 
       // printFrame.srcdoc = `<html><head><title>${this.config.title}</title></head><body></body></html>`;
 
       document.getElementsByTagName("body")[0].appendChild(printFrame);
-      return document.getElementById(this.config.frameId) as HTMLFrameElement;
+      return document.getElementById(this.config.iframeId) as HTMLFrameElement;
     }
 
     return checkIframe;
@@ -37,8 +37,8 @@ export class Iframe {
       this.traverseNode(this.printPage, (ele: Element) => {
         ele.setAttribute("p-style", window.getComputedStyle(ele, null).cssText);
       });
-    if (this.config.frameId) {
-      // let printFrameObj= document.getElementById(this.config.frameId).contentWindow;
+    if (this.config.iframeId) {
+      // let printFrameObj= document.getElementById(this.config.iframeId).contentWindow;
       const printFrameObj = this.iframe.contentWindow;
       if (printFrameObj) {
         const iframeBody = printFrameObj.document.getElementsByTagName(

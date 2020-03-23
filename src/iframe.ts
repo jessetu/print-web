@@ -4,14 +4,17 @@ import init from "./main";
 export class Iframe {
   iframe: HTMLFrameElement;
   printPage: HTMLElement | null;
+  iframeId: string;
   constructor(private config: Params) {
+    console.log(config);
     this.iframe = this.createIframe();
     this.printPage = document.getElementById(this.config.id);
+    this.iframeId = this.config.id + "-iframe";
   }
 
   createIframe(): HTMLFrameElement {
     const checkIframe = document.getElementById(
-      this.config.iframeId
+      this.iframeId
     ) as HTMLFrameElement;
     if (!checkIframe) {
       let printFrame = document.createElement("iframe");
@@ -19,25 +22,25 @@ export class Iframe {
         "style",
         "visibility: hidden; height: 0; width: 0; position: absolute;"
       );
-      printFrame.setAttribute("id", this.config.iframeId);
-      printFrame.setAttribute("name", this.config.iframeId);
+      printFrame.setAttribute("id", this.iframeId);
+      printFrame.setAttribute("name", this.iframeId);
 
       // printFrame.srcdoc = `<html><head><title>${this.config.title}</title></head><body></body></html>`;
 
       document.getElementsByTagName("body")[0].appendChild(printFrame);
-      return document.getElementById(this.config.iframeId) as HTMLFrameElement;
+      return document.getElementById(this.iframeId) as HTMLFrameElement;
     }
 
     return checkIframe;
   }
 
   cloneToIframe() {
-    console.log(this.printPage);
+    console.log(this.iframeId);
     if (this.printPage)
       this.traverseNode(this.printPage, (ele: Element) => {
         ele.setAttribute("p-style", window.getComputedStyle(ele, null).cssText);
       });
-    if (this.config.iframeId) {
+    if (this.iframeId) {
       // let printFrameObj= document.getElementById(this.config.iframeId).contentWindow;
       const printFrameObj = this.iframe.contentWindow;
       if (printFrameObj) {

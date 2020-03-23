@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<meta charset='utf-8'>
+	<meta charset='UTF-8'>
 	<meta name='viewport' content='width=device-width,initial-scale=1'>
 
 	<title>tprint</title>
@@ -38,7 +38,7 @@
 
 <body>
 	<div style="display: none;">
-		<table border id="print-web">
+		<table id="print-web">
 			<tbody>
 				<tr>
 					<th colspan="2">print-web 打印</th>
@@ -49,11 +49,23 @@
 				</tr>
 			</tbody>
 		</table>
+		<table id="print-web2">
+			<tbody>
+				<tr>
+					<th colspan="2">print-web2 打印</th>
+				</tr>
+				<tr>
+					<td>test-one</td>
+					<td>test-two</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 
 
 
 	<button onclick="startPrint()">开始打印</button>
+	<button onclick="startPrint2()">开始打印2</button>
 	<script type="module">
 		import p from "./js/print-web.js"
 
@@ -63,7 +75,11 @@
 
 	<script>
 		function startPrint() {
-			p()
+			p({id: "print-web"})
+		}
+
+		function startPrint2() {
+			p({id: "print-web2"})
 		}
 	</script>
 </body>

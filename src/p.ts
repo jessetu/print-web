@@ -2,11 +2,10 @@ import { Iframe } from "./iframe";
 
 export interface Params {
   id: string;
-  iframeId: string;
   title?: string;
 }
 export default class P {
-  constructor(private config: Params, private ifr: Iframe) {
+  constructor(private ifr: Iframe) {
     this.ifr.cloneToIframe();
     this.print();
   }
